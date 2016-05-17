@@ -42,9 +42,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+		//public Animator anim;
+		//public jumpAnimation _jumpAnimation;
+
         // Use this for initialization
         private void Start()
         {
+			//anim = GetComponent<Animator> ();
+
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -208,6 +213,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
             bool waswalking = m_IsWalking;
+
+			//anim.SetFloat ("horizontal", horizontal);
+			//anim.SetFloat ("vertical", vertical);
 
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
